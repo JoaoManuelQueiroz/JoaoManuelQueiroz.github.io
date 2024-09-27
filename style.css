@@ -33,7 +33,11 @@ ul {
 }
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
   padding: 30px 20px;
 }
 /* CABEÇALHO */
@@ -43,9 +47,11 @@ header {
   display: flex;
   gap: 200px;
   flex-direction: row;
+  /* background-color: red; */
 }
 .header-title {
   width: 50%;
+  /* background-color: purple; */
   font-size: 40px;
   font-weight: bolder;
 }
@@ -54,17 +60,15 @@ header {
   width: 50%;
   gap: 30px;
   align-items: center;
+  /* background-color: pink; */
   font-size: 20px;
 }
 /* Home Page*/
 .content-home {
   display: flex;
+  width: 50%;
   flex-direction: column;
-  gap: 35px;
-  padding-top: 100px;
-  padding-bottom: 20px;
-  padding-left: 400px;
-  padding-right: 400px;
+  gap: 10px;
 }
 .welcome-message {
   width: 100%;
@@ -75,16 +79,17 @@ header {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: fit-content;
   gap: 10px;
 }
 .icon {
-  margin-top: 10px;
   width: 40px;
   height: 40px;
   fill: #848;
 }
 .card-home {
   background-color: #2e2e33;
+  width: 50%;
   padding: 20px;
   border-radius: 10px;
 }
@@ -113,5 +118,48 @@ header {
 .padding-none {
   padding: 0;
 }
-@media screen {
+@media screen and (max-width: 1200px) {
+  .content-home {
+    width: 65%;
+  }
+  .card-home {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .content-home {
+    width: 85%;
+  }
+  .card-home {
+    width: 85%;
+  }
+  .content-about-me {
+    width: 85%;
+  }
+  .image-and-text {
+    flex-direction: column;
+  }
+  .mank-photo {
+    align-self: center;
+  }
+}
+@media screen and (max-device-width: 768px) {
+  /* CABEÇALHO */
+  header {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .header-title {
+    width: 100%;
+  }
+  .navigation {
+    width: 100%;
+    justify-content: center;
+  }
+  .content-home {
+    width: 65%;
+  }
+  .card-home {
+    width: 65%;
+  }
 }
